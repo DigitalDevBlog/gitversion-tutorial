@@ -39,8 +39,6 @@ jobs:
   print-version:
     runs-on: ubuntu-latest
     needs: versioning-output
-    with:
-      package_version: ${{ needs.versioning-output.package_version }}
     steps:
       - name: Print package version
       run: |
