@@ -38,8 +38,10 @@ jobs:
     uses: DigitalDevBlog/.github/workflows/gitversioning.yml@develop
   print-version:
     runs-on: ubuntu-latest
-    needs: versioning-output
     steps:
+    needs: versioning-output
+    with:
+      package_version: ${{ needs.versioning-output.package_version }}
       - name: Print package version
       run: |
         echo ${{ package_version }}
