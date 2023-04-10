@@ -41,5 +41,6 @@ jobs:
     needs: versioning-ouput
     with:
       package_version: ${{ needs.versioning-output.outputs.package_version }}
-      run: |
-        echo ${{ needs.versioning-output.outputs.package_version }}    
+    steps:
+      - name: Print version
+        run: echo ${{ needs.versioning-output.outputs.package_version }}
