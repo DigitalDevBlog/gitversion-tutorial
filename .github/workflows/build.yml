@@ -33,7 +33,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
-          echo test, and deploy your project.
+          echo test, and deploy your project
   print-version:
     - uses: DigitalDevBlog/gitversion-tutorial/.github/workflows/gitversioning.yml@develop
       with:
