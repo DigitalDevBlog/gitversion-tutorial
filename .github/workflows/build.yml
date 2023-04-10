@@ -36,9 +36,7 @@ jobs:
           echo test, and deploy your project.
   print-version:
     uses: DigitalDevBlog/gitversion-tutorial/.github/workflows/gitversioning.yml@develop
-      with:
-        package_version: ${{ gitversioning.outputs.package_version }}
-        run: |
-          echo ${{ gitversioning.outputs.package_version }}
-
-    
+    with:
+      package_version: ${{ gitversioning.outputs.package_version }}
+      run: |
+        echo ${{ gitversioning.outputs.package_version }}    
