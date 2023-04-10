@@ -41,6 +41,7 @@ jobs:
     with:
       package_version: ${{ needs.versioning-output.package_version }}
     steps:
+      - uses: DigitalDevBlog/gitversion-tutorial/.github/workflows/gitversioning.yml@develop
       - name: Print version
         run: |
           echo ${{ needs.versioning.outputs.package_version }}
