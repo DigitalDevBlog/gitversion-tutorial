@@ -38,7 +38,7 @@ jobs:
     uses: DigitalDevBlog/gitversion-tutorial/.github/workflows/gitversioning.yml@develop
   
   print-version:
-    needs: versioning-ouput
+    needs: versioning-output
     with:
       package_version: ${{ needs.versioning-output.outputs.package_version }}
     steps:
