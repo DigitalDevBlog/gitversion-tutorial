@@ -37,14 +37,8 @@ jobs:
   versioning-output:
     uses: DigitalDevBlog/.github/workflows/gitversioning.yml@develop
   print-version:
-    runs-on: ubuntu-latest
-    steps:
     needs: versioning-output
     with:
       package_version: ${{ needs.versioning-output.package_version }}
-      - name: Print package version
-      run: |
-        echo ${{ package_version }}
-        echo ${{ needs.versioning-output.package_version }}
-      
+
     
