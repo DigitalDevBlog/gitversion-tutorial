@@ -35,12 +35,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
   print-version:
-    steps:
-      - uses: DigitalDevBlog/gitversion-tutorial/.github/workflows/gitversioning.yml@develop
-        with:
-          package_version: ${{ needs.versioning-output.package_version }}
-      - name: Print
-        run: |
-          echo ${{ needs.versioning.outputs.package_version }}
-
-    
+    uses: DigitalDevBlog/gitversion-tutorial/.github/workflows/gitversioning.yml@develop
+    with:
+      package_version: ${{ needs.versioning-output.package_version }}
+      run: |
+        echo ${{ needs.versioning.outputs.package_version }}
