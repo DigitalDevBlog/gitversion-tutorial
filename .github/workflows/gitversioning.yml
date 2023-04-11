@@ -5,6 +5,8 @@ on:
       package_version:
         description: "Package version"
         value: ${{ jobs.versioning-output.outputs.package_version }}
+  # Allows you toe manually run this waorkflow from the Actions tab
+  workflow_dispatch:
 
 jobs:
   versioning-output:
@@ -28,5 +30,5 @@ jobs:
           useConfigFile: true
           configFilePath: "GitVersion.yml"
       - run: |
-          echo "fullSemVer="`echo ${{ steps.gitversion.outputs.fullSemVer }}` >> $GITHUB_OUTPUT
+          echo "fullSemVer="`${{ steps.gitversion.outputs.fullSemVer }}` >> $GITHUB_OUTPUT
           echo "Package version: ${{ steps.gitversion.outputs.fullSemVer}} " >> GITHUB_STEP_SUMMARY
